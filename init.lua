@@ -1,2 +1,2 @@
-require("arrow.core")
-require("arrow.lazy")
+require("josean.core")
+require("josean.lazy")
