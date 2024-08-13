@@ -1,16 +1,12 @@
 return {
-  "williamboman/mason.nvim",
+  "williamboman/mason.nvim", -- Package manager used to instadd LSP and DAP adapters
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "williamboman/mason-lspconfig.nvim", -- Adds integration between mason and lspconfig
+    "WhoIsSethDaniel/mason-tool-installer.nvim", -- Updater for mason packages
   },
   config = function()
-    -- import mason
     local mason = require("mason")
-
-    -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
@@ -35,8 +31,7 @@ return {
         "lua_ls",
         "graphql",
         "emmet_ls",
-        "prismals",
-        "pyright",
+        "omnisharp",
       },
     })
 
@@ -44,9 +39,6 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
         "eslint_d",
       },
     })
