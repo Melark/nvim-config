@@ -31,7 +31,7 @@ return {
         "lua_ls",
         "graphql",
         "emmet_ls",
-        "omnisharp",
+        -- "omnisharp",
       },
     })
 
