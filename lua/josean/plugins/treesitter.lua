@@ -4,6 +4,14 @@ return {
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
+    {
+      "nvim-treesitter/nvim-treesitter-context", -- Show code context
+      opts = {
+        enable = true,
+        mode = "topline",
+        line_numbers = true,
+      },
+    },
   },
   config = function()
     -- import nvim-treesitter plugin
@@ -45,6 +53,10 @@ return {
         "vimdoc",
         "c",
         "c_sharp",
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
       },
       incremental_selection = {
         enable = true,
