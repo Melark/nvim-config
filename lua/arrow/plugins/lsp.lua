@@ -10,6 +10,8 @@ return {
     "hrsh7th/nvim-cmp",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    { "folke/neodev.nvim", opts = {} },
+    { "antosha417/nvim-lsp-file-operations", config = true },
     "j-hui/fidget.nvim",
   },
 
@@ -18,6 +20,12 @@ return {
     local cmp_lsp = require("cmp_nvim_lsp")
     local capabilities =
       vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
 
     require("fidget").setup({})
     require("mason").setup()
