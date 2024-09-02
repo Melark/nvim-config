@@ -13,6 +13,7 @@ return {
     { "folke/neodev.nvim", opts = {} },
     { "antosha417/nvim-lsp-file-operations", config = true },
     "j-hui/fidget.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
 
   config = function()
@@ -39,6 +40,7 @@ return {
         "graphql",
         "emmet_ls",
         "tsserver",
+        "gopls",
       },
       handlers = {
         function(server_name) -- default handler (optional)
@@ -96,6 +98,17 @@ return {
     })
 
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+    local mason_tool_installer = require("mason-tool-installer")
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "golines", -- go formatter
+        "templ",
+        "eslint_d", -- js linter
+      },
+    })
 
     cmp.setup({
       snippet = {
