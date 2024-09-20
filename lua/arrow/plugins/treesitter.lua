@@ -28,6 +28,11 @@ return {
         "dockerfile",
         "gitignore",
         "query",
+        "tsx",
+        "prisma",
+        "markdown",
+        "markdown_inline",
+        "bash",
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -38,7 +43,7 @@ return {
       auto_install = true,
 
       indent = {
-        enable = true
+        enable = true,
       },
       autotag = {
         enable = true,
@@ -60,11 +65,11 @@ return {
     treesitter_parser_config.templ = {
       install_info = {
         url = "https://github.com/vrischmann/tree-sitter-templ.git",
-        files = {"src/parser.c", "src/scanner.c"},
+        files = { "src/parser.c", "src/scanner.c" },
         branch = "master",
       },
     }
 
     vim.treesitter.language.register("templ", "templ")
-  end
+  end,
 }

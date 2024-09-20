@@ -36,6 +36,8 @@ return {
         "rust_analyzer",
         "html",
         "cssls",
+        "svelte",
+        "prismals",
         "tailwindcss",
         "graphql",
         "emmet_ls",
@@ -125,8 +127,10 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- For luasnip users.
-      }, {
+        { name = "crates" },
         { name = "buffer" },
+
+        { name = "path" }, -- file system paths
       }),
     })
 
