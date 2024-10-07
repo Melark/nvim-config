@@ -41,7 +41,6 @@ return {
         "tailwindcss",
         "graphql",
         "emmet_ls",
-        "tsserver",
         "gopls",
       },
       handlers = {
