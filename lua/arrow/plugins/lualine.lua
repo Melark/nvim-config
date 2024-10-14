@@ -19,7 +19,7 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = "molokai",
+        theme = "solarized_light",
       },
       sections = {
         lualine_x = {
