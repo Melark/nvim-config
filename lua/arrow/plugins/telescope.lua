@@ -6,6 +6,7 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
     "folke/todo-comments.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   config = function()
     local telescope = require("telescope")
@@ -35,5 +36,16 @@ return {
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
     keymap.set("n", "<leader>th", "<cmd>Telescope colorscheme<cr>", { desc = "Colorscheme picker with Telescope" })
     keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+    keymap.set("n", "<leader>fa", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+
+    keymap.set("n", "<leader>/", function()
+      -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        winblend = 10,
+        previewer = false,
+      }))
+    end, { desc = "[/] Fuzzily search in current buffer" })
+
+    require("telescope").load_extension("fzf")
   end,
 }
