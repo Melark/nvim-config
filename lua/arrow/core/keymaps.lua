@@ -34,4 +34,9 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up one line" }
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Navigate half page and keep cursor in middle of the screen" })
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Navigate half page and keep cursor in middle of the screen" })
 
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set(
+  "n",
+  "<leader>s",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Replace word under cursor" }
+)
