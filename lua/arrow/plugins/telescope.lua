@@ -46,6 +46,10 @@ return {
       }))
     end, { desc = "[/] Fuzzily search in current buffer" })
 
+    vim.keymap.set("n", "<leader>fn", function()
+      builtin.find_files({ cwd = vim.fn.stdpath("config") })
+    end, { desc = "Seach NVIM config" })
+
     require("telescope").load_extension("fzf")
   end,
 }

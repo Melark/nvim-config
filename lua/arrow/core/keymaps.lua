@@ -26,3 +26,12 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 keymap.set("n", "<leader>on", ":ObsidianNew<cr>", { desc = "New note" })
 keymap.set("n", "<leader>ot", ":ObsidianToday<cr>", { desc = "Open today's note" })
+
+-- other from theprimeagen
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down one line" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up one line" })
+
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Navigate half page and keep cursor in middle of the screen" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Navigate half page and keep cursor in middle of the screen" })
+
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
