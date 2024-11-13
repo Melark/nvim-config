@@ -37,6 +37,9 @@ return {
     keymap.set("n", "<leader>th", "<cmd>Telescope colorscheme<cr>", { desc = "Colorscheme picker with Telescope" })
     keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
     keymap.set("n", "<leader>fa", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+    keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
+    keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+    keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
 
     keymap.set("n", "<leader>/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.

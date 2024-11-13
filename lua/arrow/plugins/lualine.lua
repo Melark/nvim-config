@@ -19,7 +19,7 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = "gruvbox-material",
+        theme = "sonokai",
       },
       sections = {
         lualine_x = {
