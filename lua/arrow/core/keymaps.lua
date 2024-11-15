@@ -26,6 +26,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 keymap.set("n", "<leader>on", ":ObsidianNew<cr>", { desc = "New note" })
 keymap.set("n", "<leader>ot", ":ObsidianToday<cr>", { desc = "Open today's note" })
+keymap.set("n", "<leader>oy", ":ObsidianYesterday<cr>", { desc = "Open yesterday's note" })
 
 -- other from theprimeagen
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down one line" })

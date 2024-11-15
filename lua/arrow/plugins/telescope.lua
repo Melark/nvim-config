@@ -24,6 +24,7 @@ return {
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("git_worktree")
 
     -- set keymaps
     local builtin = require("telescope.builtin")
@@ -40,6 +41,14 @@ return {
     keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
     keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
+
+    keymap.set("n", "<leader>wf", function()
+      require("telescope").extensions.git_worktree.git_worktrees()
+    end, { desc = "Show git worktrees" })
+
+    keymap.set("n", "<leader>wc", function()
+      require("telescope").extensions.git_worktree.create_git_worktree()
+    end, { desc = "Create a git worktree" })
 
     keymap.set("n", "<leader>/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
