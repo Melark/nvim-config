@@ -12,7 +12,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     { "folke/neodev.nvim", opts = {} },
     { "antosha417/nvim-lsp-file-operations", config = true },
-    "j-hui/fidget.nvim",
+    { "j-hui/fidget.nvim", opts = {} },
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
 
@@ -93,6 +93,15 @@ return {
           lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+          })
+        end,
+
+        ["gopls"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig["gopls"].setup({
+            capabilities = capabilities,
+            cmd = { "gopls" },
+            filetypes = { "go", "gomod", "gowork", "gotmpl" },
           })
         end,
       },
