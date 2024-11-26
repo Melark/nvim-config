@@ -37,6 +37,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+opt.list = true
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -46,3 +48,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- NOTE: [[ Windows specific options ]]
+--
+---@diagnostic disable-next-line: undefined-field
+local isWindows = vim.loop.os_uname().sysname:find("Windows") and true or false
+
+if isWindows then
+  opt.shell = "powershell"
+  vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
+  vim.opt.shellxquote = ""
+end
