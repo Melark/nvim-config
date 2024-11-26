@@ -33,6 +33,7 @@ return {
         "markdown",
         "markdown_inline",
         "bash",
+        "go",
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
