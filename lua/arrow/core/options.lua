@@ -38,8 +38,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
-opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- opt.list = true
+-- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
