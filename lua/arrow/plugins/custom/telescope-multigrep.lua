@@ -9,12 +9,12 @@ local live_multigrep = function(opts)
   opts.cwd = opts.cwd or vim.uv.cwd()
 
   local finder = finders.new_async_job({
-    command_generatpr = function(prompt)
+    command_generator = function(prompt)
       if not prompt or prompt == "" then
         return nil
       end
 
-      local pieces = vim.split(promt, "  ")
+      local pieces = vim.split(prompt, "  ")
       local args = { "rg" }
 
       if pieces[1] then
