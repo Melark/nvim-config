@@ -50,6 +50,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.http",
+  callback = function()
+    vim.bo.filetype = "http"
+  end,
+})
+
 -- NOTE: [[ Windows specific options ]]
 --
 ---@diagnostic disable-next-line: undefined-field
