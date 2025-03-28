@@ -56,6 +56,7 @@ return {
       vim.keymap.set("n", "<12>", dap.step_out, { desc = "Debug Step Out" })
       vim.keymap.set("n", "<<F9>>", dap.step_back, { desc = "Debug Step Back" })
       vim.keymap.set("n", "<F13>", dap.restart, { desc = "Debug Restart" })
+      vim.keymap.set("n", "<leader>dt", ui.toggle, { desc = "Toggle Dap UI" })
 
       dap.listeners.before.attach.dapui_config = function()
         ui.open()

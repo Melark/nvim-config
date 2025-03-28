@@ -84,9 +84,9 @@ return {
         cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
       })
     end, { desc = "[S]earch [/] in Open Files" })
-    
+
     -- custom plugins
-    require("lua.arrow.plugins.telescope.telescope-multigrep").setup()
-    require("lua.arrow.plugins.telescope.telescope-find-directories").setup()
+    -- require("lua.arrow.plugins.telescope.telescope-multigrep").setup()
+    -- require("lua.arrow.plugins.telescope.telescope-find-directories").setup()
   end,
 }

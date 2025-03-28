@@ -1,1 +1,0 @@
-require("arrow.plugins.telescope")
