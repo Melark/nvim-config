@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
-  { { import = "arrow.plugins" }, { import = "arrow.plugins.lsp" }, { import = "arrow.plugins.sql" } },
+  { { import = "arrow.plugins" } },
   {
     checker = {
       enabled = true,
