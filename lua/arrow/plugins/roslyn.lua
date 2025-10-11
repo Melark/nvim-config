@@ -1,12 +1,13 @@
 return {
   "seblyng/roslyn.nvim",
-  ft = "cs",
+  -- ft = "cs",
   config = function()
     require("roslyn").setup({
       config = {},
-      broad_search = true,
+      broad_search = false,
+      lock_target = true,
     })
     -- create commands
-    require("arrow.custom.roslyn_utils").setup()
+    -- require("arrow.custom.roslyn_utils").setup()
   end,
 }

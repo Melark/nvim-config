@@ -27,7 +27,7 @@ return {
 
           require("neotest-dotnet")({
             dap = {
-              args = { justMyCode = false },
+              args = { justMyCode = true },
               adapter_name = "coreclr",
             },
             discovery_root = "solution", -- or "solution (.sln)" or "project (.csproj)"
